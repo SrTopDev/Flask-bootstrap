@@ -1,0 +1,130 @@
+{% block doc -%}
+<!DOCTYPE html>
+<html lang="en">
+{%- block html %}
+    <head>
+        {{ bootstrap.load_css() }}
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        {%- block head %}
+            <title>{% block title %}{% endblock title %}</title>
+           
+            {%- block metas %}
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            {%- endblock metas %}
+            {%- block styles %}
+            
+            {%- endblock styles %}
+        {%- endblock head %}
+    </head>
+    <body>
+        {% block body -%}
+            {% block header -%}
+            <div class="header">
+                <nav class="mx-0 navbar navbar-expand-lg" style="background-color: #343333;">
+                <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-between" id="navbarTogglerDemo01">
+                    <div class="w-75 mx-auto">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        
+                        <button class="nav-link w-100" style="height:auto; text-align: start;"> <img src="{{url_for('static', filename='image/circle-solid.png')}}" alt="circle-solid" style="width: 15px;" class="algin-self-center"> Dashboard</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link w-100" style="height:auto; text-align: start;"> <img src="{{url_for('static', filename='image/circle-solid.png')}}" alt="circle-solid" style="width: 15px;" class="algin-self-center"> Content & Source</button>
+                    </li>
+                    <li class="nav-item">
+                        <button class="nav-link w-100" style="height:auto; text-align: start;"> <img src="{{url_for('static', filename='image/circle-solid.png')}}" alt="circle-solid" style="width: 15px;" class="algin-self-center"> My Content</button>
+                    </li>
+                    </ul>          
+                    </div>
+                    <div class="row">
+                    <div class="d-flex col-lg-6">
+                        <div class="form w-75 mx-auto">
+                        <!-- <i class="fa fa-search"></i> -->
+                        <input type="text" class="form-control form-input w-100" placeholder="Search">
+                        <!-- <span class="left-pan"><i class="fa fa-microphone"></i></span> -->
+                        </div>
+                    </div>
+                    <div class="col-lg-6 align-items-center justify-content-center d-flex">
+                        <div>
+                        <button style="border:none; background-color: #343333;"><img src="{{url_for('static', filename='image/bell.png')}}" alt="bell" style="width: 30px; height:30px; margin-right: 5px;"> </button>                
+                        </div>
+                        <div>
+                        
+                        <button style="border:none; background-color: #343333;"><img src="{{url_for('static', filename='image/question-circle.png')}}" alt="question" style="width:30px; height:30px;  margin-right: 7px;"> </button>   
+                        </div>
+                        <div class="vl m-0 p-0" style="height: 140%;">
+        
+                        </div>
+                        <div class="d-flex">
+                        <button style="border:none; background-color: #343333; border-left: 2px; border-color: white;"><img src="{{url_for('static', filename='image/person-circle.png')}}" alt="person" style="width:30px; height:30px;  margin-right: 5px;"> </button>
+                        <button style="border:none; background-color: #343333; "><i class="material-icons" style="color: white;height: 30px;">keyboard_arrow_down</i></button>                
+                        </div>
+        
+                    </div>        
+                    </div>
+                </div>
+                </div>
+                </nav>
+            </div>
+            {%- endblock header %}
+
+            {% block menu -%}
+            {%- endblock menu %}
+
+            {% block contain -%}
+            {%- endblock contain %}
+
+            {% block footer -%}
+            <div class="footer">
+                <div class="text-center d-flex justify-content-between" style="background-color: #F5F5F5">
+                  <div style="width: 30%; height:100%;">
+                    <div class="collapse" id="navbarToggleExternalContent">
+                      <div class="bg-dark p-4">
+                        <h5 class="text-white h4">Collapsed content</h5>
+                        <span class="text-muted"></span>
+                      </div>
+                    </div>
+                    <nav class="navbar navbar-dark " style="background-color: lightgrey;">
+                      <div class="container-fluid">
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
+                      </div>
+                    </nav>          
+                  </div>
+                  <div class="align-items-center d-flex">
+                    <div class="d-flex"  style="background-color: #F5F5F5">
+                      <div>
+                        <button style="border:none;"><img src="{{url_for('static', filename='image/bell1.png')}}" alt="bell" style="width: 30px; height:30px; margin-right: 5px;"> </button>                
+                      </div>
+                      <div>
+                        <button style="border:none;"><img src="{{url_for('static', filename='image/question-circle1.png')}}" alt="question" style="width:30px; height:30px;  margin-right: 7px;"> </button>   
+                      </div>
+                      <div class="vl m-0 p-0" style="height: 140%; background-color: white;">
+            
+                      </div>
+                        
+                      <div class="d-flex">
+                      <button style="border:none; border-left: 2px; border-color: white;"><img src="{{url_for('static', filename='image/person-circle1.png')}}" alt="person" style="width:30px; height:30px;  margin-right: 5px;"> </button>
+                      <button style="border:none;"><i class="material-icons" style="color: lightgrey; height: 30px; font-size: 24px;">keyboard_arrow_down</i></button>                
+                      </div>
+                    </div>            
+                  </div>
+            
+                </div>
+              </div>
+            {%- endblock footer %}
+            {{ bootstrap.load_js() }}
+			<script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+            {% block scripts %}
+
+            {%- endblock scripts %}
+        {%- endblock body %}
+        
+    </body>
+{%- endblock html %}
+{% endblock doc -%}

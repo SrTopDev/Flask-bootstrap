@@ -1,0 +1,10 @@
+.progress{
+    --bs-progress-border-radius: 0rem;
+}
+.vl{
+    border-left: 1px solid white;
+    height: 100%;
+}
+.nav-tabs{
+    --bs-nav-tabs-border-radius: 0rem;
+}

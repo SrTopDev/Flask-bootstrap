@@ -1,0 +1,307 @@
+{% extends "base.html" %}
+
+{% block title %}
+    Index
+{% endblock title %}
+
+{%- block styles %}
+    <link rel="stylesheet" href="{{url_for('static', filename = 'css/style.css')}}">
+{%- endblock styles %}
+
+
+{% block menu -%}
+  <div class="p-3 d-flex menu">
+    <div>
+      <a href="#" style="text-decoration:none; color:black;">Home</a>
+    </div>
+    <div>
+      <i class="material-icons">&#xe315;</i>
+    </div> 
+    <div>
+      <a href="#" style="text-decoration:none; color:black;">Dashboard</a>
+    </div>
+    <div>
+      <i class="material-icons">&#xe315;</i>
+    </div> 
+    <div>
+      <a href="#" style="text-decoration:none; color:black;">Main Content</a>
+    </div> 
+  </div>
+{%- endblock menu %}
+
+{% block contain -%}
+<div class="container-fluid">
+  
+            {% if current_user.is_authenticated %}
+              <h1> Welcome, {{ name }}!</h1>
+            {% endif %}
+            {% if current_user.is_authenticated %}
+            <a href="{{ url_for('auth.logout') }}" class="navbar-item">
+                Logout
+            </a>
+            {% endif %}
+    <div class="row">
+      <div class="col-md-6">
+        <div class="border p-3 m-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist" style="background-color: #F5F5F5;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Financial Times</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Debunk</button>
+            </li>
+          </ul>
+          
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> 
+              <div>
+                <b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> 
+                <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?                  
+              </div>
+              <div class="container d-flex justify-content-end">
+                <button class="rounded">view</button>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+              <div class="row my-4">
+                <div class="col-sm-8">
+                  <p>
+                    <u><b>Bitcoin tumnles as crypto lender Celsius halts withdrawals</b></u>
+                    <br><br>
+                    World's leading digital token sinks to lowest level since 2020 as market comes under mounting pressure.
+                    Is it a circumstantial situation, or a sector trend overall?
+                    <br> <br>
+                    <b>Keywords: </b> Celsius Ether Bitcoin yields lendin <br>
+                    <b>Source: </b>  Financial Times (submitted 72 times) <br>
+                    <b>Mentions: </b>43 users <br>
+                    <b>Article Clicks: </b>138 times <br>
+                    <b>Debunged? </b>No <br>
+                    <b>Similar sources: </b>Wall Street Journal, The Times, The Economist
+                  </p>
+                </div>
+                <div class="col-sm-4">
+                  <img src="{{url_for('static', filename='image/card.png')}}" alt="card">
+                </div>                
+              </div>
+            </div>
+            <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+              <div class="row my-4">
+                <div class="col-auto"><p><b>Is this article wuwpicious</b></p></div>
+                <div class="col">
+                  <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" role="switch" id="flexSwitchCheckDefault">
+                    <label class="form-check-label" for="flexSwitchCheckDefault">yes</label>
+                  </div>                  
+                </div>
+                <div>
+                  <p>
+                    <b>Coments</b>
+                    Lorem ipsum dolor amet brooklyn commodo laborum laboris air plant in chartreuse ut nulla
+                    normcore id non hashtag kombucha ipsum. Quis poutine farm-to-table literall, woke
+                    neutra gluten-free. Gastropub green juice jianbing ramps umami dolore. Slow-carb hammock 
+                    deserunt pitchfork affogato eiusmod everyday carry wolf tempor mlkshk umami swag iPhone green juice.
+                    <br><b>Supporting links</b> <br>
+                    <u>Yields flutuation last 12 months</u> <br>
+                    <u>Celsius reveal record quarter profit in Q3</u> <br>
+                    <u>Bitcoin variation within normal bi-annual trends, reports say</u>
+                  </p>
+                </div>
+              </div>                
+            </div>
+          </div>
+
+        </div>
+
+        <div class="border p-3 m-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-color: #F5F5F5;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#crypto-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Crypto.com</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#info-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#debunk-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Debunk</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="crypto-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> <b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="info-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="debunk-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+          </div>
+          <div class="container d-flex justify-content-end">
+            <button class="rounded">view</button>
+          </div>
+        </div>
+
+        <div class="border p-3 m-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-color: #F5F5F5;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#BinanceNews-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">BinanceNews</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#info3-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#debunk3-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Debunk</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="BinanceNews-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> <b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="info3-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="debunk3-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+          </div>
+          <div class="container d-flex justify-content-end">
+            <button class="rounded">view</button>
+          </div>
+        </div>
+
+        <div class="border p-3 m-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-color: #F5F5F5;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#Bitmex-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Bitmex</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#info4-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#debunk4-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Debunk</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="Bitmex-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> <b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="info4-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="debunk4-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+          </div>
+          <div class="container d-flex justify-content-end">
+            <button class="rounded">view</button>
+          </div>
+        </div>
+
+        <div class="border p-3 m-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-color: #F5F5F5;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#economist-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Economist</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#info5-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#debunk5-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Debunk</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="economist-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> <b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="info5-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="debunk5-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+          </div>
+          <div class="container d-flex justify-content-end">
+            <button class="rounded">view</button>
+          </div>          
+        </div>
+
+        <div class="border p-3 m-2">
+          <ul class="nav nav-tabs" id="myTab" role="tablist"  style="background-color: #F5F5F5;">
+            <li class="nav-item" role="presentation">
+              <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#coinbase-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Coinbase</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#info6-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Info</button>
+            </li>
+            <li class="nav-item" role="presentation">
+              <button class="nav-link" id="contact-tab" data-bs-toggle="tab" data-bs-target="#deunk6-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Debunk</button>
+            </li>
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="coinbase-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0"> <b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="info6-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+            <div class="tab-pane fade" id="debunk6-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0"><b>Bitcoin tumnles as crypto lender Celsus halts withdrawals</b> <br> World's leading digital since 2020 as market comes under mounting pressure. Is it acircumstantiak situation, or a sector trend overall?</div>
+          </div>
+          <div class="container d-flex justify-content-end">
+            <button class="rounded">view</button>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="col-md-6">
+        <div class="m-2 shadow bg-body ">
+            <div class="border p-1 bg-dark" style="color: white;">My Last Content</div>
+            <div class="border p-4">
+              <div class=" row d-flex">
+                <div class="col-auto"> <img src="{{url_for('static', filename='image/glove.png')}}" alt="glove" class="rounded" style="width:30px; height:auto;margin-top: 10px;"> </div>
+                <div class="col">
+                  <div class="progress my-2">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                  <div class="progress">
+                    <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>              
+                </div>
+                </div>
+              </div>
+              
+            <div class="border p-3 px-4 " style="margin-top: 3px;">
+              <a href="#" style="text-decoration:none; color: black;">Action1</a>
+              <a href="#" class="px-3" style="text-decoration: none; color: black;">Action2</a>
+              <a href="#" class="justify-content-end" style="text-decoration: none; float: right; color: black;">More...</a>
+            </div>
+        </div>
+
+        <div class="m-2 shadow bg-body">
+          <div class="border p-1 bg-dark" style="color: white;">Last Sources</div>
+          <div class="border p-4">
+            <div class=" row d-flex">
+              <div class="col-auto"> <img src="{{url_for('static', filename='image/glove.png')}}" alt="glove" class="rounded" style="width:30px; height:auto;margin-top: 10px;"> </div>
+              <div class="col">
+                <div class="progress my-2">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="progress">
+                  <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>              
+              </div>
+              </div>           
+          </div>
+          <div class="border p-3 px-4 " style="margin-top: 3px;">
+            <a href="#" style="text-decoration:none; color: black;">Action1</a>
+            <a href="#" class="px-3" style="text-decoration: none; color: black;">Action2</a>
+            <a href="#" class="justify-content-end" style="text-decoration: none; float: right; color: black;">More...</a>
+          </div>
+        </div>
+
+        <div class="m-2 shadow bg-body">
+        <div class="border p-1 bg-dark" style="color: white;">Content Under Review</div>
+        <div class="border p-4">
+          <div class=" row d-flex">
+            <div class="col-auto"> <img src="{{url_for('static', filename='image/glove.png')}}" alt="glove" class="rounded" style="width:30px; height:auto;margin-top: 10px;"> </div>
+            <div class="col">
+              <div class="progress my-2">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar bg-success" role="progressbar" style="width: 0%" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>              
+            </div>
+            </div>         
+        </div>
+        <div class="border p-3 px-4 " style="margin-top: 3px;">
+          <a href="#" style="text-decoration:none; color: black;">Action1</a>
+          <a href="#" class="px-3" style="text-decoration: none; color: black;">Action2</a>
+          <a href="#" class="justify-content-end" style="text-decoration: none; float: right; color: black;">More...</a>
+        </div>
+        </div>
+      </div>      
+    </div>      
+  </div>
+
+{%- endblock contain %}
+
+
+{% block scripts %}
+    
+    
+{%- endblock scripts %}
